@@ -8,7 +8,7 @@
     "name": "wuzhenji",
     "email": "15195035689@163.com"
   },
-  "repository": "https://github.com/wuzhenji",
+  "repository": "https://github.com/wuzhenji/cloud-doc-umi",
   "scripts": {
     "dev": "concurrently \"wait-on http://localhost:8000 && electron .\" \"cross-env BROWSER=none npm start\"",
     "ele": "electron .",
@@ -18,9 +18,9 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage",
-    "release": "electron-builder",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "release": "cross-env GH_TOKEN=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 electron-builder"
   },
   "homepage": "./",
   "build": {
@@ -37,18 +37,10 @@
     "directories": {
       "buildResources": "assets"
     },
-    "extends": null,
-    "win": {
-      "target": ["msi", "nsis"],
-      "icon": "assets/icon.ico",
-      "artifactName": "${productName}-Web-Setup-${version}.${ext}",
-      "publisherName": "wuzhenji"
-    },
-    "nsis": {
-      "allowToChangeInstallationDirectory": true,
-      "oneClick": false,
-      "perMachine": false
-    }
+    "publish": [
+      "github"
+    ],
+    "extends": null
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -71,17 +63,19 @@
     "@types/react-dom": "^17.0.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.20",
-    "easymde": "^2.15.0",
-    "react-simplemde-editor": "^5.0.2",
-    "umi": "^3.5.20",
-    "lint-staged": "^10.0.7",
-    "prettier": "^2.2.0",
-    "typescript": "^4.1.2",
-    "yorkie": "^2.0.0",
     "concurrently": "^6.5.1",
     "cross-env": "^7.0.3",
+    "easymde": "^2.15.0",
     "electron": "^16.0.5",
     "electron-builder": "^22.14.5",
-    "wait-on": "^6.0.0"
-  }
+    "electron-updater": "^4.6.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0",
+    "react-simplemde-editor": "^5.0.2",
+    "typescript": "^4.1.2",
+    "umi": "^3.5.20",
+    "wait-on": "^6.0.0",
+    "yorkie": "^2.0.0"
+  },
+  "__npminstall_done": false
 }
