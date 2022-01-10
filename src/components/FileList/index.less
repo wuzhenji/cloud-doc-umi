@@ -1,0 +1,27 @@
+.FileList{
+    flex: 1;
+
+    .FileItem{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin: 0 5px;
+        border-bottom: 1px solid #ccc;
+
+        .FileName {
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .MoreActionBtn {
+            cursor: pointer;
+
+            .MoreActionIcon{
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+}

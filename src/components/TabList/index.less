@@ -1,0 +1,86 @@
+.TabList {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+
+    .TabItem {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 10px;
+        background: #ddd;
+        cursor: pointer;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:not(.ActiveTab):hover {
+            color: #1890ff;
+        }
+
+        &.ActiveTab {
+            background: #fff;
+        }
+
+        .TabName {
+            max-width: 80px;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .TabStatus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+
+            .CloseStatus {
+                position: absolute;
+                z-index: 2;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                height: 22px;
+                border-radius: 4px;
+                transition: all .3s;
+
+                &:hover {
+                    background: #ccc;
+                }
+            }
+
+            .UnsaveStatus {
+                position: absolute;
+                z-index: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 22px;
+                height: 22px;
+
+                &::after {
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: rgba(0, 0, 0, .6);
+                }
+            }
+        }
+    }
+
+    .TabItem:hover .TabStatus .CloseStatus {
+        display: flex;
+    }
+
+    .TabItem:hover .TabStatus .UnsaveStatus {
+        display: none;
+    }
+}
