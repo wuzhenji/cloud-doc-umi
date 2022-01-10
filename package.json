@@ -1,7 +1,7 @@
 {
   "name": "my-buildtest-app",
   "main": "main.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Online Markdown Editor Using Qiniu cloud service",
   "author": {
